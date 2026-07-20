@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/oauth-20-authentication
+docs: https://developers.hover.to/docs/oauth-20-authentication
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode, refreshToken]
+  api_key_in: []
+schemes:
+  - name: OAuth2
+    type: oauth2
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://hover.to/oauth/authorize
+        tokenUrl: https://hover.to/oauth/token
+        refreshUrl: https://hover.to/oauth/token
+    token:
+      access_token_ttl: 2h
+      access_token_note: An access token is valid for 2 hours and must be refreshed.
+      refresh_token_note: >-
+        A refresh token is valid indefinitely but invalidates when it is
+        exchanged for a new access token / refresh token combination.
+    levels:
+      - user
+      - org
+    org_level_note: >-
+      Some endpoints, when used with org-level OAuth 2.0, require a
+      params[current_user_email] or params[current_user_id] value or a 422 may
+      be returned.
+scopes_documented: false
+scopes_note: >-
+  Hover's public OAuth documentation does not enumerate granular scopes; access
+  is governed at the user/organization level.
+mcp_auth: https://developers.hover.to/docs/authentication-for-mcp-use
