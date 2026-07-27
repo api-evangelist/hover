@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/api-usage-and-limits
+docs: https://developers.hover.to/docs/api-usage-and-limits
+rate_limits:
+  - scope: global
+    limit_count: 120
+    window: minute
+    note: 120 API requests per minute (RPM), equivalent to 7200 requests per hour.
+  - scope: global
+    limit_count: 7200
+    window: hour
+timeout:
+  seconds: 60
+  note: The API timeout for all operations is set to 60 seconds.
+over_limit:
+  status: 429
+  message: Rate Limit Exceeded
+  behavior: May temporarily block further requests.
+guidance:
+  strategy: exponential backoff
+  note: >-
+    Implement exponential backoff with a maximum retry limit; introduce brief
+    delays between calls and monitor response codes during peak usage.
+response_headers_documented: false

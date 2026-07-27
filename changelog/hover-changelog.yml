@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/release-notes
+docs: https://developers.hover.to/docs/release-notes
+scheme: semver
+scope: >-
+  The dated release notes published on the developer portal track the Hover for
+  Salesforce package alongside API/webhook capabilities surfaced to integrators.
+current_version: 1.7.12
+entries:
+  - version: 1.7.12
+    date: '2026-07-14'
+    highlights:
+      - Mobile Capture Link support with HTTPS smart links replacing custom URL schemes
+      - New Mobile_Capture_Link__c field on Hover Job records
+      - Updated hoverDeepLink Lightning Web Component for mobile app compatibility
+  - version: 1.7.10
+    date: '2026-07-09'
+    highlights:
+      - Sub-org webhook support enabling parent org event reception
+      - New Parent_Org_ID__c field stamped at job creation
+      - Controlled via Enable_Suborg_Access__c configuration
+  - version: 1.7.9
+    date: '2026-06-26'
+    highlights:
+      - hoverDeepLink LWC launches Photo Capture flows from records
+      - Auto-create estimates feature (off by default); estimates split by trade/template
+      - New financing fields plus Hips_Length__c and Ridges_Length__c measurement fields
+  - version: 1.7.1
+    date: '2026-03-04'
+    highlights:
+      - Job Notes fields (Hover_Note__c, Hover_Note_ID__c)
+      - Deliverable change request webhook event support
+      - Capture Only / Photos Only deliverable support; Estimate locking
+  - version: 1.6.3
+    date: '2026-01-26'
+    highlights:
+      - Estimation and Inspection integration one-way sync
+      - New custom objects for Estimates and Inspections

@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+format: http-status
+source: https://developers.hover.to/docs/api-usage-and-limits
+note: >-
+  Hover returns standard HTTP status codes with JSON bodies rather than RFC 9457
+  problem+json. The entries below are the error conditions documented across the
+  Hover developer portal (rate limits, job creation, testing).
+problems:
+  - status: 422
+    title: Unprocessable Entity
+    detail: >-
+      Missing required params such as params[current_user_email] or
+      params[current_user_id] on org-level OAuth 2.0 requests (e.g. Create a Job).
+    source: https://developers.hover.to/reference/createajob
+  - status: 429
+    title: Rate Limit Exceeded
+    detail: >-
+      More than 120 requests/minute (7200/hour). May temporarily block further
+      requests; retry with exponential backoff.
+    source: https://developers.hover.to/docs/api-usage-and-limits
+  - status: 408
+    title: Request Timeout
+    detail: The API timeout for all operations is 60 seconds.
+    source: https://developers.hover.to/docs/api-usage-and-limits
+  - status: 401
+    title: Unauthorized
+    detail: Missing or expired access token (access tokens expire after 2 hours).
+    source: https://developers.hover.to/docs/oauth-20-authentication
+failure_reasons_docs: https://developers.hover.to/docs/retrieving-failure-reasons

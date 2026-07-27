@@ -1,28 +1,133 @@
 aid: hover
 name: HOVER
-description: 'HOVER is a company surfaced as a portfolio company of gv, menlo-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  HOVER turns smartphone photos of a property into an accurate, interactive 3D
+  model with complete exterior and interior measurements for the construction,
+  roofing, insurance, and home-services industries. The HOVER API lets partners
+  programmatically create and manage jobs, send capture requests that invite a
+  homeowner or field technician to photograph a structure, receive real-time
+  status updates via webhooks, and retrieve 3D models and measurement
+  deliverables in JSON, PDF, XLSX, SKP, ESX, FML, and XML formats. Additional
+  endpoints cover inspections, estimates and material lists, instant-design
+  images and leads, blueprint reconstruction, job sharing, notes, users, wallets
+  and payments. Authentication is OAuth 2.0 (authorization code + refresh), and a
+  hosted MCP server exposes the same surface to AI agents. HOVER is backed by GV
+  and Menlo Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/hover/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - gv
 - menlo-ventures
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://hover.to/favicon.ico
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Enterprise
-apis: []
+- Construction
+- Roofing
+- Insurance
+- 3D Modeling
+- Property Data
+- Measurements
+- Home Services
+- Geospatial
+apis:
+- name: HOVER API
+  description: >-
+    REST API for creating and managing property capture jobs, retrieving 3D
+    models and measurement deliverables, inspections, estimates, instant-design
+    leads, and webhooks. OAuth 2.0 authenticated. Versioned under /api/v1,
+    /api/v2, and /api/v3 paths.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Property Data
+  - 3D Modeling
+  - Measurements
+  properties:
+  - type: Authentication
+    url: authentication/hover-authentication.yml
+  - type: Conventions
+    url: conventions/hover-conventions.yml
+  - type: RateLimits
+    url: rate-limits/hover-rate-limits.yml
+  - type: Webhooks
+    url: asyncapi/hover-webhooks.yml
+  - type: Sandbox
+    url: sandbox/hover-sandbox.yml
+  - type: ErrorCatalog
+    url: errors/hover-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/hover-lifecycle.yml
+  - type: Conformance
+    url: conformance/hover-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/hover-domain-security.yml
 - type: Website
-  url: http://hover.to
+  url: https://hover.to
+- type: DeveloperPortal
+  url: https://developers.hover.to
+- type: Documentation
+  url: https://developers.hover.to/docs/welcome
+- type: APIReference
+  url: https://developers.hover.to/reference
+- type: GettingStarted
+  url: https://developers.hover.to/docs/creating-and-managing-integrations
+- type: Support
+  url: https://help.hover.to
+- type: Blog
+  url: https://hover.to/blog
+- type: GitHubOrganization
+  url: https://github.com/hoverinc
+- type: Pricing
+  url: https://hover.to/pricing
+- type: SignUp
+  url: https://hover.to/onboarding/start
+- type: Login
+  url: https://hover.to/login
+- type: TermsOfService
+  url: https://hover.to/terms_of_use
+- type: PrivacyPolicy
+  url: https://hover.to/privacy
+- type: TrustCenter
+  url: https://trust.hover.to
+- type: ChangeLog
+  url: https://developers.hover.to/docs/release-notes
+- type: Integrations
+  url: https://hover.to/integrations
+- type: MCPServer
+  url: mcp/hover-mcp.yml
+- type: LLMsTxt
+  url: llms/hover-llms.txt
+- type: ChangeLog
+  url: changelog/hover-changelog.yml
+- type: WellKnown
+  url: well-known/hover-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

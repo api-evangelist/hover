@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://developers.hover.to/docs/what-is-hover-mcp
+server:
+  name: hoverapi
+  transport: http
+  url: https://developers.hover.to/mcp
+  hosted_by: ReadMe (built-in MCP server)
+  authentication: OAuth 2.0 (user-provided Hover access token)
+clients:
+  # Verbatim connection config published in the Hover docs
+  - name: Cursor
+    config:
+      mcpServers:
+        hoverapi:
+          url: https://developers.hover.to/mcp
+  - name: Claude Desktop
+    config:
+      mcpServers:
+        hoverapi:
+          command: npx
+          args: ["-y", "mcp-remote", "https://developers.hover.to/mcp"]
+  - name: ChatGPT
+    docs: https://developers.hover.to/docs/connected-to-chatgpt
+capabilities:
+  # As documented on the What is Hover MCP page (ReadMe-hosted MCP surface)
+  - Direct API access to Hover functionality
+  - Documentation search across the developer portal
+  - Real-time data retrieval from connected Hover accounts
+  - Code-generation assistance for building integrations
+notes: >-
+  Hover exposes its OpenAPI specification and documentation through ReadMe's
+  built-in MCP server. It cannot independently manage OAuth flows without
+  user-provided authentication and does not persist logic or host integrations.
+docs:
+  what_is: https://developers.hover.to/docs/what-is-hover-mcp
+  connecting: https://developers.hover.to/docs/mcp-2
+  auth: https://developers.hover.to/docs/authentication-for-mcp-use

@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/welcome
+docs: https://developers.hover.to
+authentication:
+  style: oauth2
+  header: 'Authorization: Bearer <access_token>'
+  ref: authentication/hover-authentication.yml
+versioning:
+  scheme: uri-path
+  versions: [v1, v2, v3]
+  current: v3
+  note: >-
+    Endpoints are served under /api/v1, /api/v2, and /api/v3 paths. v3 endpoints
+    add multi-structure / multi-level support and are the current recommendation.
+base_url: https://hover.to/api
+media_type: application/json
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key header or contract is documented in Hover's public API
+    docs. Job/model creation is guarded by webhook-driven state machines rather
+    than client idempotency keys.
+pagination:
+  documented: false
+  note: >-
+    List endpoints (List Jobs, List Capture Requests, etc.) exist but Hover does
+    not publish a single cross-cutting pagination contract in its public docs.
+rate_limit_signaling:
+  limit: 120 requests/minute (7200/hour)
+  timeout: 60s
+  over_limit: HTTP 429 Rate Limit Exceeded
+  guidance: exponential backoff
+  ref: rate-limits/hover-rate-limits.yml
+webhooks:
+  supported: true
+  model: register -> verify (verification code) -> receive events
+  ref: asyncapi/hover-webhooks.yml
+errors:
+  ref: errors/hover-problem-types.yml
+deliverable_formats: [json, pdf, xlsx, skp, esx, fml, xml]

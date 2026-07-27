@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/oauth-20-authentication
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      OAuth 2.0 authorization-code + refresh-token flows documented, with
+      /oauth/authorize and /oauth/token endpoints.
+  - id: rfc6749-oauth2-authorization-code
+    conforms: true
+    evidence: Authorization Code Grant documented.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery or id_token documented.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors returned as plain HTTP status codes / JSON, not application/problem+json.
+  - id: webhooks
+    conforms: true
+    evidence: Register/verify webhook lifecycle with 14 documented event types.
+  - id: rest-json
+    conforms: true
+    evidence: JSON REST API over HTTPS under /api/v1|v2|v3.

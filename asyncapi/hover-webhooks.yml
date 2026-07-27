@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+spec_type: Webhooks
+source: https://developers.hover.to/docs/hovers-available-webhooks
+docs:
+  overview: https://developers.hover.to/docs/leveraging-hovers-webhooks
+  events: https://developers.hover.to/docs/hovers-available-webhooks
+  reference: https://developers.hover.to/reference/webhooks
+delivery:
+  transport: HTTP POST
+  payload: application/json
+  registration:
+    model: register -> verify -> receive
+    register: https://developers.hover.to/reference/register-webhook
+    verify: https://developers.hover.to/reference/verify-webhook
+    resend_verification: https://developers.hover.to/reference/resend-webhook-verification-code
+    delete: https://developers.hover.to/reference/delete-webhook
+    list: https://developers.hover.to/reference/list-webhooks
+events:
+  - name: job-state-changed-v2
+    description: >-
+      Job transitions between states (working, waiting_approval, processing,
+      paying, completed, failed).
+  - name: model-created
+    description: A model is created on a job (relevant for multi-structure properties).
+  - name: model-state-changed
+    description: Individual model processing completes with state complete or failed.
+  - name: capture-request-state-changed
+    description: Capture request state transitions (new, connected, complete, deleted).
+  - name: project-management-production-list-created
+    description: An estimate / material list is created.
+  - name: project-management-production-list-manual-sync
+    description: User manually syncs an estimate to a third-party system.
+  - name: project-management-production-list-approval-changed
+    description: Estimate approval status changes.
+  - name: project-management-proposal-document-state-changed
+    description: Agreement/proposal document creation and state changes.
+  - name: project-management-signature-request-state-changed
+    description: Signature requests are created or signed.
+  - name: project-management-order-document-state-changed
+    description: Material/labor orders reach complete state.
+  - name: distribution-order-state-changed
+    description: Product catalog orders are submitted.
+  - name: inspection-state-changed
+    description: Inspection state transitions throughout the capture/QA lifecycle.
+  - name: instant-design-image-created
+    description: A new instant-design image is generated.
+  - name: instant-design-lead-form-submitted
+    description: A user completes the instant designer lead form.

@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.hover.to/docs/testing-your-integration
+docs:
+  guide: https://developers.hover.to/docs/testing-your-integration
+  reference: https://developers.hover.to/reference/testing-endpoints
+mode:
+  separation: test jobs run through a mocked reconstruction pipeline
+  billing: Processing a job through the Test Jobs endpoints does not incur a cost.
+  webhooks: >-
+    Single-structure test jobs fire realistic webhook events as if a job were
+    going through the real 3D reconstruction pipeline; multi-structure test jobs
+    do not fire the expected webhooks (per the reference docs).
+endpoints:
+  - name: Single Structure Test Jobs
+    method: PATCH
+    path: https://hover.to/api/v2/jobs/{job_id}/set_test_state.json
+    params:
+      state: [complete, failed]
+      current_user_id: required
+    precondition: >-
+      Job must first be created (job or capture request) and be in 'uploading'
+      or 'processing_upload' state.
+    reference: https://developers.hover.to/reference/update-job-test-state-single-structure
+  - name: Multi-Structure Test Jobs
+    method: POST
+    params:
+      failed_models_count: [0, 1, 2]
+    description: >-
+      One-step request that creates a sample job with multiple models, useful
+      for testing interior captures with multiple levels.
+    reference: https://developers.hover.to/reference/multi-structure-test-jobs
+test_states:
+  complete: Returns sample deliverables and measurements.
+  failed: Simulates reconstruction failures with no sample data.
