@@ -7,6 +7,7 @@ checked:
 - https://monid.ai/tools/hover
 - https://n8n.io/integrations/hover/
 - https://zapier.com/apps/hover/integrations
+- okta/integrations/okta-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -337,6 +338,27 @@ edges:
   direction: third-party
   category: Forms & Surveys
   partner_url: http://google.com/
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/hover_to/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - HOVER Inc.
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - SAML
 templates:
 - title: Send HOVER capture requests for new leads in AccuLynx
   url: https://zapier.com/apps/acculynx/integrations/hover/742686/send-hover-capture-requests-for-new-leads-in-acculynx

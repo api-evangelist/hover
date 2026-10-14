@@ -286,3 +286,16 @@
   relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
+- slug: hover-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/hover_to/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
