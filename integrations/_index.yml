@@ -299,3 +299,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: hover-servicetitan-own
+  label: ServiceTitan (own)
+  partner: servicetitan
+  partner_name: ServiceTitan (own)
+  category: Measurements & Estimations, On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hover
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
