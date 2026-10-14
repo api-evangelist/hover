@@ -1,0 +1,76 @@
+generated: '2026-10-14'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 0
+  platform: 1
+  roles:
+  - other
+  - portal
+  - source
+  - support
+  - website
+hosts:
+- host: developers.hover.to
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - ChangeLog
+  serves:
+  - docs
+  registrable_domain: hover.to
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: help.hover.to
+  found_by:
+  - pointer
+  types:
+  - Support
+  serves: []
+  registrable_domain: hover.to
+  role: support
+  relation: own
+- host: hover.to
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - Website
+  - Blog
+  - Pricing
+  - SignUp
+  - Login
+  - TermsOfService
+  - PrivacyPolicy
+  - Integrations
+  serves:
+  - api
+  registrable_domain: hover.to
+  role: website
+  relation: own
+- host: trust.hover.to
+  found_by:
+  - pointer
+  types:
+  - TrustCenter
+  serves: []
+  registrable_domain: hover.to
+  role: other
+  relation: own

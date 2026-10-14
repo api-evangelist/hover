@@ -1,0 +1,401 @@
+generated: '2026-10-14'
+method: searched
+source:
+- https://zapier.com/apps/hover/integrations
+checked:
+- https://composio.dev/toolkits/hover
+- https://monid.ai/tools/hover
+- https://n8n.io/integrations/hover/
+- https://zapier.com/apps/hover/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: hover
+  url: https://zapier.com/apps/hover/integrations
+  external_url: http://www.hover.to/
+  partner_tier: BRONZE
+  triggers:
+  - key: getInspectionChecklist
+    label: Inspection Checklist Created
+  - key: inspection_state_changed
+    label: Inspection State Changed
+  - key: instantDesignLeadFormSubmitted
+    label: Instant Design Lead Form Submitted
+  - key: job_updated
+    label: Job Updated
+  - key: listEstimates
+    label: Estimate Generated
+  - key: list_orders
+    label: Order Generated
+  - key: list_proposals
+    label: Proposal Generated
+  - key: material_list
+    label: Material List Created
+  - key: model_updated
+    label: Model Updated
+  actions:
+  - key: approveJob
+    label: Approve a Job
+  - key: create_3d_link
+    label: Get 3D Model Link
+  - key: create_a_job
+    label: Create a Job
+  - key: create_capture_request
+    label: Create a Capture Request
+  - key: deleteCaptureRequest
+    label: Delete a Capture Request
+  - key: getInspectionChecklist
+    label: Download Inspection Checklist List Questions and Answers
+  - key: getInspectionPDF
+    label: Download Inspection PDF
+  - key: getInstantDesignLead
+    label: Get Instant Design Lead by Lead ID
+  - key: getMaterialList
+    label: Download Material List Data as Line Items
+  - key: getMeasurements
+    label: Download Job Measurements as Line Items
+  - key: getMeasurementsFile
+    label: Download Job Measurements as a File
+  - key: getRoofWasteFactor
+    label: Calculate Roof Waste Factor
+  - key: get_model_details
+    label: Get Model Details
+  - key: reassignJob
+    label: Reassign a Job
+  - key: upgradeAJob
+    label: Upgrade a Job
+  - key: _zap_raw_request
+    label: API Request (Beta)
+  searches:
+  - key: findUser
+    label: Find a User
+  - key: search_jobs
+    label: Search for a Job or Model
+edges:
+- partner_name: JobNimbus
+  partner: jobnimbus
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/jobnimbus
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.jobnimbus.com/
+- partner_name: AccuLynx
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/acculynx
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://acculynx.com/
+- partner_name: Twilio
+  partner: twilio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/twilio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.twilio.com/
+- partner_name: Jobber
+  partner: jobber
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/jobber
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.getjobber.com/plp/zapier?utm_source=Zapier&utm_medium=PLP
+- partner_name: Gmail
+  partner: gmail
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: SQL Server
+  partner: microsoft-sql-server
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/sql-server
+  direction: third-party
+  category: Databases
+  partner_url: https://www.microsoft.com/sql-server
+- partner_name: Anthropic (Claude)
+  partner: anthropic
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/anthropic-claude
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.anthropic.com/
+- partner_name: Roofr
+  partner: roofr
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/roofr
+  direction: third-party
+  category: Sales & CRM
+  partner_url: https://roofr.com/
+- partner_name: Stacker Classic
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/stacker-classic
+  direction: third-party
+  category: App Builder
+  partner_url: https://www.stackerhq.com/
+- partner_name: Flickr
+  partner: flickr
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/flickr
+  direction: third-party
+  category: Images & Design
+  partner_url: https://www.flickr.com/
+- partner_name: PHOTO iD by U Scope
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/photo-id
+  direction: third-party
+  category: File Management & Storage
+  partner_url: https://photoidapp.net/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: YouTube
+  partner: youtube
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/youtube
+  direction: third-party
+  category: Google
+  partner_url: https://www.youtube.com/
+- partner_name: GitHub
+  partner: github
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/github
+  direction: third-party
+  category: Developer Tools
+  partner_url: https://github.com/
+- partner_name: Human in the Loop
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/human-in-the-loop
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://zapier.com/blog/human-in-the-loop-guide/
+- partner_name: Box
+  partner: box
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/box
+  direction: third-party
+  category: File Management & Storage
+  partner_url: https://www.box.com/
+- partner_name: Leap CRM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/leap-crm
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://leaptodigital.com/leap-crm/
+- partner_name: Pastel
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/pastel
+  direction: third-party
+  category: Team Collaboration
+  partner_url: https://usepastel.com/
+- partner_name: Magpi
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/magpi
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://zapier.com/magpi.com/
+- partner_name: Google Forms (Legacy)
+  partner: google
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/google-forms-legacy
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+templates:
+- title: Send HOVER capture requests for new leads in AccuLynx
+  url: https://zapier.com/apps/acculynx/integrations/hover/742686/send-hover-capture-requests-for-new-leads-in-acculynx
+  apps:
+  - acculynx
+  - hover
+- title: Send HOVER Capture Requests for new contacts in JobNimbus
+  url: https://zapier.com/apps/hover/integrations/jobnimbus/115267/send-hover-capture-requests-for-new-contacts-in-jobnimbus
+  apps:
+  - jobnimbus
+  - hover
+- title: Send HOVER capture requests for new Calendly invitees
+  url: https://zapier.com/apps/calendly/integrations/hover/116128/send-hover-capture-requests-for-new-calendly-invitees
+  apps:
+  - calendly
+  - hover
+- title: Send HOVER capture requests for new Salesforce Leads
+  url: https://zapier.com/apps/hover/integrations/salesforce/116734/send-hover-capture-requests-for-new-salesforce-leads
+  apps:
+  - salesforce
+  - hover
+- title: Send HOVER Capture Requests for new leads in SalesRabbit
+  url: https://zapier.com/apps/hover/integrations/salesrabbit/118113/send-hover-capture-requests-for-new-leads-in-salesrabbit
+  apps:
+  - salesrabbit
+  - hover
+- title: Send HOVER Capture Requests for new HubSpot Contacts
+  url: https://zapier.com/apps/hover/integrations/hubspot/143944/send-hover-capture-requests-for-new-hubspot-contacts
+  apps:
+  - hubspot
+  - hover
+- title: Create Capture Requests for new Deals in Pipedrive
+  url: https://zapier.com/apps/hover/integrations/pipedrive/143947/create-capture-requests-for-new-deals-in-pipedrive
+  apps:
+  - pipedrive
+  - hover
+- title: Send Capture Requests for new Leads in Zoho
+  url: https://zapier.com/apps/hover/integrations/zoho-crm/143951/send-capture-requests-for-new-leads-in-zoho
+  apps:
+  - zoho-crm
+  - hover
+- title: Send HOVER capture requests for new Wufoo form entries
+  url: https://zapier.com/apps/hover/integrations/wufoo/143954/send-hover-capture-requests-for-new-wufoo-form-entries
+  apps:
+  - wufoo
+  - hover
+- title: Send HOVER capture requests for new WPForms entries
+  url: https://zapier.com/apps/hover/integrations/wpforms/143964/send-hover-capture-requests-for-new-wpforms-entries
+  apps:
+  - wpforms
+  - hover
+- title: Send HOVER capture requests for new Typeform entries
+  url: https://zapier.com/apps/hover/integrations/typeform/143967/send-hover-capture-requests-for-new-typeform-entries
+  apps:
+  - typeform
+  - hover
+- title: Create HOVER capture requests for new Ninja Forms submissions
+  url: https://zapier.com/apps/hover/integrations/ninjaforms/143970/create-hover-capture-requests-for-new-ninja-forms-submissions
+  apps:
+  - ninjaforms
+  - hover
+template_total: 60

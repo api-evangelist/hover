@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: hover-ehi
+  version: '3'
+servers:
+- url: https://ehi.hover.to/
+security:
+- sec0: []
+x-readme-fauxas: true
+paths:
+  /waste_factor/roof:
+    get:
+      summary: Get Roof RWF
+      description: ''
+      operationId: get-roof-rwf
+      parameters:
+      - name: roof_square_feet
+        in: query
+        description: Required. The total square footage of the roof
+        schema:
+          type: integer
+          format: int32
+          default: 1350
+      - name: step_flashing_linear_feet
+        in: query
+        description: Required. The total area of the `step_flashing` of a roof.
+        schema:
+          type: integer
+          format: int32
+          default: 189
+      - name: rakes_linear_feet
+        in: query
+        description: Required. The total area of the rakes of a roof.
+        schema:
+          type: integer
+          format: int32
+          default: 85
+      - name: valleys_linear_feet
+        in: query
+        description: Required. The total area of the valleys of a roof.
+        schema:
+          type: integer
+          format: int32
+          default: 446
+      - name: hips_linear_feet
+        in: query
+        description: Required. The total area of the `ridges_hips` of a roof.
+        schema:
+          type: integer
+          format: int32
+          default: 115
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                RWF 200 OK:
+                  value: "{\n   \"predicted_roof_waste_factor\": 7.2\n}"
+              schema:
+                type: object
+                properties:
+                  predicted_roof_waste_factor:
+                    type: number
+                    example: 7.2
+                    default: 0
+      deprecated: false
+components:
+  securitySchemes:
+    sec0:
+      type: oauth2
+      flows: {}
+x-provenance:
+  method: searched
+  source: https://developers.hover.to/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://developers.hover.to/reference/get-roof-rwf.md
+  merge:
+    pages: 1
+    deduped: 0
+    conflicts_kept_first: 0

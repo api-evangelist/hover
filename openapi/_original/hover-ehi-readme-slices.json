@@ -1,0 +1,122 @@
+[
+ {
+  "page": "https://developers.hover.to/reference/get-roof-rwf.md",
+  "definition": {
+   "openapi": "3.1.0",
+   "info": {
+    "title": "hover-ehi",
+    "version": "3"
+   },
+   "servers": [
+    {
+     "url": "https://ehi.hover.to/"
+    }
+   ],
+   "components": {
+    "securitySchemes": {
+     "sec0": {
+      "type": "oauth2",
+      "flows": {}
+     }
+    }
+   },
+   "security": [
+    {
+     "sec0": []
+    }
+   ],
+   "paths": {
+    "/waste_factor/roof": {
+     "get": {
+      "summary": "Get Roof RWF",
+      "description": "",
+      "operationId": "get-roof-rwf",
+      "parameters": [
+       {
+        "name": "roof_square_feet",
+        "in": "query",
+        "description": "Required. The total square footage of the roof",
+        "schema": {
+         "type": "integer",
+         "format": "int32",
+         "default": 1350
+        }
+       },
+       {
+        "name": "step_flashing_linear_feet",
+        "in": "query",
+        "description": "Required. The total area of the `step_flashing` of a roof.",
+        "schema": {
+         "type": "integer",
+         "format": "int32",
+         "default": 189
+        }
+       },
+       {
+        "name": "rakes_linear_feet",
+        "in": "query",
+        "description": "Required. The total area of the rakes of a roof.",
+        "schema": {
+         "type": "integer",
+         "format": "int32",
+         "default": 85
+        }
+       },
+       {
+        "name": "valleys_linear_feet",
+        "in": "query",
+        "description": "Required. The total area of the valleys of a roof.",
+        "schema": {
+         "type": "integer",
+         "format": "int32",
+         "default": 446
+        }
+       },
+       {
+        "name": "hips_linear_feet",
+        "in": "query",
+        "description": "Required. The total area of the `ridges_hips` of a roof.",
+        "schema": {
+         "type": "integer",
+         "format": "int32",
+         "default": 115
+        }
+       }
+      ],
+      "responses": {
+       "200": {
+        "description": "200",
+        "content": {
+         "application/json": {
+          "examples": {
+           "RWF 200 OK": {
+            "value": "{\n   \"predicted_roof_waste_factor\": 7.2\n}"
+           }
+          },
+          "schema": {
+           "type": "object",
+           "properties": {
+            "predicted_roof_waste_factor": {
+             "type": "number",
+             "example": 7.2,
+             "default": 0
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "deprecated": false
+     }
+    }
+   },
+   "x-readme": {
+    "headers": [],
+    "explorer-enabled": true,
+    "proxy-enabled": true
+   },
+   "x-readme-fauxas": true
+  }
+ }
+]

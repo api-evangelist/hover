@@ -1,0 +1,25 @@
+generated: '2026-10-14'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/hover-api-v3-openapi.yml
+- openapi/hover-ehi-openapi.yml
+- openapi/hover-rest-api-openapi.yml
+vocabulary:
+  name: HOVER Domain Vocabulary
+  description: 'Terms declared by HOVER''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-14'
+  terms:
+  - term: Jobs
+    definition: 'Resource group in the contract; its operation POST /api/v1/jobs: ## Create A Job This endpoint creates a new job within your
+      organization that is ready for image [capture within the mobile application](https://help.hover.to/en/articles/4278777-how-to-capture-photos-with-hover)
+      (where a homeowner, field tech etc., could capture the photos.).'
+    tags:
+    - Resource Group
+    source: openapi/hover-rest-api-openapi.yml
+  - term: Inspections
+    definition: 'Resource group in the contract; its operation GET /api/v2/inspections/{inspection_id}: Get Inspection Details'
+    tags:
+    - Resource Group
+    source: openapi/hover-rest-api-openapi.yml

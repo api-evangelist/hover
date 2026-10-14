@@ -1,6 +1,7 @@
 generated: '2026-07-19'
 method: searched
 source: https://developers.hover.to/docs/api-usage-and-limits
+name: HOVER API Rate Limits
 docs: https://developers.hover.to/docs/api-usage-and-limits
 rate_limits:
   - scope: global

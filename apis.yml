@@ -1,26 +1,29 @@
 aid: hover
+
 name: HOVER
-description: >-
-  HOVER turns smartphone photos of a property into an accurate, interactive 3D
-  model with complete exterior and interior measurements for the construction,
-  roofing, insurance, and home-services industries. The HOVER API lets partners
-  programmatically create and manage jobs, send capture requests that invite a
-  homeowner or field technician to photograph a structure, receive real-time
-  status updates via webhooks, and retrieve 3D models and measurement
-  deliverables in JSON, PDF, XLSX, SKP, ESX, FML, and XML formats. Additional
-  endpoints cover inspections, estimates and material lists, instant-design
-  images and leads, blueprint reconstruction, job sharing, notes, users, wallets
-  and payments. Authentication is OAuth 2.0 (authorization code + refresh), and a
-  hosted MCP server exposes the same surface to AI agents. HOVER is backed by GV
-  and Menlo Ventures.
+
+description: HOVER turns smartphone photos of a property into an accurate, interactive 3D model with complete exterior and interior measurements
+  for the construction, roofing, insurance, and home-services industries. The HOVER API lets partners programmatically create and manage jobs,
+  send capture requests that invite a homeowner or field technician to photograph a structure, receive real-time status updates via webhooks,
+  and retrieve 3D models and measurement deliverables in JSON, PDF, XLSX, SKP, ESX, FML, and XML formats. Additional endpoints cover inspections,
+  estimates and material lists, instant-design images and leads, blueprint reconstruction, job sharing, notes, users, wallets and payments. Authentication
+  is OAuth 2.0 (authorization code + refresh), and a hosted MCP server exposes the same surface to AI agents. HOVER is backed by GV and Menlo
+  Ventures.
+
 url: https://raw.githubusercontent.com/api-evangelist/hover/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - gv
 - menlo-ventures
+
 x-tier: enriched
+
 x-tier-reason: portfolio-lead
+
 deliveryModel:
   model: saas
   open_source: false
@@ -32,6 +35,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -44,13 +48,21 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://hover.to/favicon.ico
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-07-19'
+
 x-docs-platform: readme
+
 x-docs-platform-confidence: high
+
 x-docs-platform-checked: 2026-10-03
+
 tags:
 - Company
 - Enterprise
@@ -62,42 +74,30 @@ tags:
 - Measurements
 - Home Services
 - Geospatial
-apis:
-- name: HOVER API
-  description: >-
-    REST API for creating and managing property capture jobs, retrieving 3D
-    models and measurement deliverables, inspections, estimates, instant-design
-    leads, and webhooks. OAuth 2.0 authenticated. Versioned under /api/v1,
-    /api/v2, and /api/v3 paths.
-  humanURL: https://developers.hover.to/docs/welcome
-  baseURL: https://hover.to/api
-  tags:
-  - Property Data
-  - 3D Modeling
-  - Measurements
-  properties:
-  - type: Authentication
-    url: authentication/hover-authentication.yml
-  - type: Conventions
-    url: conventions/hover-conventions.yml
-  - type: RateLimits
-    url: rate-limits/hover-rate-limits.yml
-  - type: Webhooks
-    url: asyncapi/hover-webhooks.yml
-  - type: Sandbox
-    url: sandbox/hover-sandbox.yml
-  - type: ErrorCatalog
-    url: errors/hover-problem-types.yml
-  - type: Lifecycle
-    url: lifecycle/hover-lifecycle.yml
-  - type: Conformance
-    url: conformance/hover-conformance.yml
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/hover-agentic-access.yml
+- type: Spectral
+  url: rules/hover-rules.yml
+- type: Vocabulary
+  url: vocabulary/hover-vocabulary.yml
+- type: Hosts
+  url: hosts/hover-hosts.yml
+- type: IntegrationEdges
+  url: integrations/hover-integration-edges.yml
+- type: Vendors
+  url: vendors/hover-vendors.yml
+- type: Newsroom
+  url: https://hover.to/press/
+- type: OAuthScopes
+  url: scopes/hover-scopes.yml
 - type: RateLimits
   url: rate-limits/hover-rate-limits.yml
 - type: DomainSecurity
@@ -142,8 +142,74 @@ common:
   url: changelog/hover-changelog.yml
 - type: WellKnown
   url: well-known/hover-well-known.yml
+
+apis:
+- name: HOVER API
+  description: REST API for creating and managing property capture jobs, retrieving 3D models and measurement deliverables, inspections, estimates,
+    instant-design leads, and webhooks. OAuth 2.0 authenticated. Versioned under /api/v1, /api/v2, and /api/v3 paths.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Property Data
+  - 3D Modeling
+  - Measurements
+  properties:
+  - type: Authentication
+    url: authentication/hover-authentication.yml
+  - type: Conventions
+    url: conventions/hover-conventions.yml
+  - type: RateLimits
+    url: rate-limits/hover-rate-limits.yml
+  - type: Webhooks
+    url: asyncapi/hover-webhooks.yml
+  - type: Sandbox
+    url: sandbox/hover-sandbox.yml
+  - type: ErrorCatalog
+    url: errors/hover-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/hover-lifecycle.yml
+  - type: Conformance
+    url: conformance/hover-conformance.yml
+  aid: hover:hover-api
+- aid: hover:hover-api-v3
+  name: HOVER Api V3 Openapi.Yml API
+  description: The Api V3 Openapi.Yml API from HOVER — 64 operation(s) for api v3 openapi.yml.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Api V3 Openapi.Yml
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-api-v3-openapi.yml
+- aid: hover:hover-ehi
+  name: HOVER Ehi Openapi.Yml API
+  description: The Ehi Openapi.Yml API from HOVER — 1 operation(s) for ehi openapi.yml.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Ehi Openapi.Yml
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-ehi-openapi.yml
+- aid: hover:hover-rest-api
+  name: HOVER Jobs API
+  description: The Jobs API from HOVER — 5 operation(s) for jobs.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-rest-api-openapi.yml
+
 x-enrichment:
   date: '2026-07-19'
   status: backfilled
   pass: local-v1
   note: backfilled from .gitignore signal + verified work evidence
+
+x-readme-harvest:
+  date: '2026-10-14'
+  ops: 76
+  tool: harvest-readme-openapi.py
+  portal: https://developers.hover.to
