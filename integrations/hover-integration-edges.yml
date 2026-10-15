@@ -6,6 +6,7 @@ checked:
 - https://composio.dev/toolkits/hover
 - https://monid.ai/tools/hover
 - https://n8n.io/integrations/hover/
+- https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/hover/integrations
 - okta/integrations/okta-integration-edges.yml
 - servicetitan/integrations/servicetitan-integration-edges.yml
@@ -377,6 +378,31 @@ edges:
   detected: '2026-10-14'
   detected_by: mirror-platform-listings.py
   category: Measurements & Estimations, On-The-Job
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/hover/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Hover
+    matched_domain: hover.to
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: hover
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 templates:
 - title: Send HOVER capture requests for new leads in AccuLynx
   url: https://zapier.com/apps/acculynx/integrations/hover/742686/send-hover-capture-requests-for-new-leads-in-acculynx
