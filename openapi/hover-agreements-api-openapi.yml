@@ -1,0 +1,114 @@
+openapi: 3.2.0
+info:
+  title: hover-api-v3 Agreements API
+  version: '3'
+servers:
+- url: https://hover.to
+security:
+- sec0: []
+tags:
+- name: Agreements
+paths:
+  /api/v1/agreements/{project_management_proposal_document_id}:
+    get:
+      responses:
+        '200':
+          description: ''
+      parameters:
+      - in: path
+        name: project_management_proposal_document_id
+        schema:
+          type: string
+        required: true
+      summary: Get Agreement Details
+      description: Get the details of a specific details and pdf of an agreement given the id.
+      operationId: get_api-v1-agreements-project-management-proposal-document-id-1
+      tags:
+      - Agreements
+components:
+  securitySchemes:
+    sec0:
+      type: oauth2
+      flows: {}
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://developers.hover.to/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://developers.hover.to/reference/blueprint-upload-build-all.md
+  - https://developers.hover.to/reference/blueprint-upload-specify-details.md
+  - https://developers.hover.to/reference/check-for-existing-capture-request.md
+  - https://developers.hover.to/reference/create-capture-request.md
+  - https://developers.hover.to/reference/create-deliverable-change-request.md
+  - https://developers.hover.to/reference/create-job-share-link-with-password.md
+  - https://developers.hover.to/reference/create-note.md
+  - https://developers.hover.to/reference/create-pdf-or-csv.md
+  - https://developers.hover.to/reference/delete-capture-request.md
+  - https://developers.hover.to/reference/delete-job-share-link.md
+  - https://developers.hover.to/reference/delete-note.md
+  - https://developers.hover.to/reference/delete-pending-change-order-request.md
+  - https://developers.hover.to/reference/delete-webhook.md
+  - https://developers.hover.to/reference/generate-access-token.md
+  - https://developers.hover.to/reference/get-agreement-details-1.md
+  - https://developers.hover.to/reference/get-authorization-code.md
+  - https://developers.hover.to/reference/get-capture-request-link.md
+  - https://developers.hover.to/reference/get-esx-export.md
+  - https://developers.hover.to/reference/get-fml-export.md
+  - https://developers.hover.to/reference/get-inspection-pdf-1.md
+  - https://developers.hover.to/reference/get-inspection-workflow-details.md
+  - https://developers.hover.to/reference/get-jobs-payment-details.md
+  - https://developers.hover.to/reference/get-json-measurements.md
+  - https://developers.hover.to/reference/get-measurements-pdf.md
+  - https://developers.hover.to/reference/get-payment-receipt-html.md
+  - https://developers.hover.to/reference/get-payment-receipt-pdf.md
+  - https://developers.hover.to/reference/get-pdf-or-csv.md
+  - https://developers.hover.to/reference/get-skp-export.md
+  - https://developers.hover.to/reference/get-upgrade-price.md
+  - https://developers.hover.to/reference/get-wireframe-images-1.md
+  - https://developers.hover.to/reference/get-xlsx-measurements.md
+  - https://developers.hover.to/reference/get-xml-3d-export.md
+  - https://developers.hover.to/reference/invite-user.md
+  - https://developers.hover.to/reference/list-available-deliverables.md
+  - https://developers.hover.to/reference/list-capture-requests.md
+  - https://developers.hover.to/reference/list-deliverable-change-requests.md
+  - https://developers.hover.to/reference/list-estimates.md
+  - https://developers.hover.to/reference/list-instant-design-images.md
+  - https://developers.hover.to/reference/list-instant-design-leads.md
+  - https://developers.hover.to/reference/list-job-share-links.md
+  - https://developers.hover.to/reference/list-jobs.md
+  - https://developers.hover.to/reference/list-notes.md
+  - https://developers.hover.to/reference/list-organization-tree.md
+  - https://developers.hover.to/reference/list-payments.md
+  - https://developers.hover.to/reference/list-users.md
+  - https://developers.hover.to/reference/list-wallets.md
+  - https://developers.hover.to/reference/list-webhooks.md
+  - https://developers.hover.to/reference/multi-structure-test-jobs.md
+  - https://developers.hover.to/reference/re-assign-requesting-user.md
+  - https://developers.hover.to/reference/refresh-access-token.md
+  - https://developers.hover.to/reference/register-webhook.md
+  - https://developers.hover.to/reference/remove-user-from-org.md
+  - https://developers.hover.to/reference/resend-capture-request-notifications.md
+  - https://developers.hover.to/reference/resend-webhook-verification-code.md
+  - https://developers.hover.to/reference/send-invitation-email.md
+  - https://developers.hover.to/reference/share-inspection-workflow.md
+  - https://developers.hover.to/reference/show-capture-request-details.md
+  - https://developers.hover.to/reference/show-estimate-details.md
+  - https://developers.hover.to/reference/show-instant-design-image.md
+  - https://developers.hover.to/reference/show-instant-design-lead.md
+  - https://developers.hover.to/reference/show-job-details.md
+  - https://developers.hover.to/reference/show-job-share-link.md
+  - https://developers.hover.to/reference/show-organization-details.md
+  - https://developers.hover.to/reference/show-user-profile.md
+  - https://developers.hover.to/reference/update-a-job.md
+  - https://developers.hover.to/reference/update-job-share-link.md
+  - https://developers.hover.to/reference/update-job-test-state-single-structure.md
+  - https://developers.hover.to/reference/update-note.md
+  - https://developers.hover.to/reference/update-organization.md
+  - https://developers.hover.to/reference/verify-webhook.md
+  merge:
+    pages: 70
+    deduped: 69
+    conflicts_kept_first: 0

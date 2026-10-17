@@ -1,0 +1,382 @@
+openapi: 3.2.0
+info:
+  title: hover-api-v3 Payments API
+  version: '3'
+servers:
+- url: https://hover.to
+security:
+- sec0: []
+tags:
+- name: Payments
+paths:
+  /api/v1/payments/{payment_id}/receipt.html:
+    get:
+      summary: Get Payment Receipt (HTML)
+      description: ''
+      operationId: get-payment-receipt-html
+      parameters:
+      - name: payment_id
+        in: path
+        description: The ID of the payment to generate a receipt for.
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+        required: true
+      - name: current_user_id
+        in: query
+        description: Required. The User ID of an admin user within the authenticated org.
+        schema:
+          type: integer
+          format: int32
+          default: 456821
+      deprecated: false
+      tags:
+      - Payments
+  /api/v1/payments/{payment_id}/receipt.pdf:
+    get:
+      summary: Get Payment Receipt (PDF)
+      description: ''
+      operationId: get-payment-receipt-pdf
+      parameters:
+      - name: payment_id
+        in: path
+        description: The ID of the payment to generate a receipt for.
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+        required: true
+      - name: current_user_id
+        in: query
+        description: Required. The User ID of an admin user within the authenticated org.
+        schema:
+          type: integer
+          format: int32
+          default: 456821
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Payments
+  /api/v1/payments?good_type={good_type}&good_id={job_id}:
+    get:
+      summary: Get Job's Payment Details
+      description: This endpoint allows you to get all the payment details, including the payment ID for a specific job.
+      operationId: get-jobs-payment-details
+      parameters:
+      - name: good_type
+        in: path
+        description: Required. The good type, in this case "Job".
+        schema:
+          type: string
+        required: true
+      - name: good_id
+        in: path
+        description: Required. The job ID of the job you are trying to get payments for.
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"pagination\": {\n        \"current_page\": 1,\n        \"total_pages\": 1,\n        \"total\": 3\n    },\n    \"results\": [\n        {\n            \"id\": 13406102,\n            \"org_id\": 463605,\n            \"good_id\": 18703054,\n            \"good_data\": \"3\",\n            \"base_price\": 0,\n            \"base_price_subsidy\": 0,\n            \"discount\": null,\n            \"discount_subsidy\": 0,\n            \"pre_tax_balance_debit\": 0,\n            \"pre_tax_subtotal\": 0,\n            \"balance_debit\": 0,\n            \"total\": 0,\n            \"subtotal\": 0,\n            \"tax\": 0,\n            \"state\": \"complete\",\n            \"error\": null,\n            \"created_at\": \"2025-10-22T18:43:34.903Z\",\n            \"updated_at\": \"2025-10-22T18:43:34.903Z\",\n            \"good_type\": \"Job\",\n            \"payment_discounts\": [],\n            \"payment_deposits\": [],\n            \"good\": {\n                \"id\": 18703054,\n                \"deliverable_id\": 3,\n                \"name\": \"Multi-structure Home\",\n                \"location_line_1\": \"123 Hover Street\",\n                \"location_city\": \"Longmont\",\n                \"location_region\": \"CO\"\n            }\n        },\n        {\n            \"id\": 13406101,\n            \"org_id\": 463605,\n            \"good_id\": 18703054,\n            \"good_data\": \"3\",\n            \"base_price\": 0,\n            \"base_price_subsidy\": 0,\n            \"discount\": null,\n            \"discount_subsidy\": 0,\n            \"pre_tax_balance_debit\": 0,\n            \"pre_tax_subtotal\": 0,\n            \"balance_debit\": 0,\n            \"total\": 0,\n            \"subtotal\": 0,\n            \"tax\": 0,\n            \"state\": \"complete\",\n            \"error\": null,\n            \"created_at\": \"2025-10-22T18:43:34.887Z\",\n            \"updated_at\": \"2025-10-22T18:43:34.887Z\",\n            \"good_type\": \"Job\",\n            \"payment_discounts\": [],\n            \"payment_deposits\": [],\n            \"good\": {\n                \"id\": 18703054,\n                \"deliverable_id\": 3,\n                \"name\": \"Multi-structure Home\",\n                \"location_line_1\": \"123 Hover Street\",\n                \"location_city\": \"Longmont\",\n                \"location_region\": \"CO\"\n            }\n        },\n        {\n            \"id\": 13406100,\n            \"org_id\": 463605,\n            \"good_id\": 18703054,\n            \"good_data\": \"3\",\n            \"base_price\": 0,\n            \"base_price_subsidy\": 0,\n            \"discount\": null,\n            \"discount_subsidy\": 0,\n            \"pre_tax_balance_debit\": 0,\n            \"pre_tax_subtotal\": 0,\n            \"balance_debit\": 0,\n            \"total\": 0,\n            \"subtotal\": 0,\n            \"tax\": 0,\n            \"state\": \"complete\",\n            \"error\": null,\n            \"created_at\": \"2025-10-22T18:43:34.870Z\",\n            \"updated_at\": \"2025-10-22T18:43:34.870Z\",\n            \"good_type\": \"Job\",\n            \"payment_discounts\": [],\n            \"payment_deposits\": [],\n            \"good\": {\n                \"id\": 18703054,\n                \"deliverable_id\": 3,\n                \"name\": \"Multi-structure Home\",\n                \"location_line_1\": \"123 Hover Street\",\n                \"location_city\": \"Longmont\",\n                \"location_region\": \"CO\"\n            }\n        }\n    ]\n}"
+              schema:
+                type: object
+                properties:
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                        default: 0
+                      total_pages:
+                        type: integer
+                        example: 1
+                        default: 0
+                      total:
+                        type: integer
+                        example: 3
+                        default: 0
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 13406102
+                          default: 0
+                        org_id:
+                          type: integer
+                          example: 463605
+                          default: 0
+                        good_id:
+                          type: integer
+                          example: 18703054
+                          default: 0
+                        good_data:
+                          type: string
+                          example: '3'
+                        base_price:
+                          type: integer
+                          example: 0
+                          default: 0
+                        base_price_subsidy:
+                          type: integer
+                          example: 0
+                          default: 0
+                        discount: {}
+                        discount_subsidy:
+                          type: integer
+                          example: 0
+                          default: 0
+                        pre_tax_balance_debit:
+                          type: integer
+                          example: 0
+                          default: 0
+                        pre_tax_subtotal:
+                          type: integer
+                          example: 0
+                          default: 0
+                        balance_debit:
+                          type: integer
+                          example: 0
+                          default: 0
+                        total:
+                          type: integer
+                          example: 0
+                          default: 0
+                        subtotal:
+                          type: integer
+                          example: 0
+                          default: 0
+                        tax:
+                          type: integer
+                          example: 0
+                          default: 0
+                        state:
+                          type: string
+                          example: complete
+                        error: {}
+                        created_at:
+                          type: string
+                          example: '2025-10-22T18:43:34.903Z'
+                        updated_at:
+                          type: string
+                          example: '2025-10-22T18:43:34.903Z'
+                        good_type:
+                          type: string
+                          example: Job
+                        payment_discounts:
+                          type: array
+                          items:
+                            type: object
+                            properties: {}
+                        payment_deposits:
+                          type: array
+                          items:
+                            type: object
+                            properties: {}
+                        good:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 18703054
+                              default: 0
+                            deliverable_id:
+                              type: integer
+                              example: 3
+                              default: 0
+                            name:
+                              type: string
+                              example: Multi-structure Home
+                            location_line_1:
+                              type: string
+                              example: 123 Hover Street
+                            location_city:
+                              type: string
+                              example: Longmont
+                            location_region:
+                              type: string
+                              example: CO
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Payments
+  /v1/payments:
+    get:
+      summary: List Payments
+      description: ''
+      operationId: list-payments
+      parameters:
+      - name: good_id
+        in: query
+        description: Optional. The id of the corresponding good (Job or Org). Only effective when used together with "good_type".
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+      - name: good_type
+        in: query
+        description: 'Optional. Supported good_type values: "Job", "Org". Case sensitive.'
+        schema:
+          type: string
+          default: Job
+      - name: state
+        in: query
+        description: 'Optional. Example states: "complete", "refunded", "cancelled", "paying", "waiting", "failed", "reverting_failed_card_charge".'
+        schema:
+          type: string
+          default: complete
+      - name: month
+        in: query
+        description: Optional. The numeric representation of month (i.e. 1 for Jan, 2 for Feb) to filter by "paid_at". Only effective when used together with "year".
+        schema:
+          type: integer
+          format: int32
+          default: 9
+      - name: year
+        in: query
+        description: Optional. The numeric representation of year (i.e. 2018) to filter by "paid_at". Only effective when used together with "month".
+        schema:
+          type: integer
+          format: int32
+          default: 2025
+      - name: page
+        in: query
+        description: Optional. Defaults to 1. Return this page of results
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: current_user_email
+        in: query
+        description: Required. An email address of an admin user in the authenticated Hover org. `current_user_id` can be used as well.
+        schema:
+          type: string
+          default: integrations@acme.com
+      deprecated: false
+      tags:
+      - Payments
+components:
+  securitySchemes:
+    sec0:
+      type: oauth2
+      flows: {}
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://developers.hover.to/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://developers.hover.to/reference/blueprint-upload-build-all.md
+  - https://developers.hover.to/reference/blueprint-upload-specify-details.md
+  - https://developers.hover.to/reference/check-for-existing-capture-request.md
+  - https://developers.hover.to/reference/create-capture-request.md
+  - https://developers.hover.to/reference/create-deliverable-change-request.md
+  - https://developers.hover.to/reference/create-job-share-link-with-password.md
+  - https://developers.hover.to/reference/create-note.md
+  - https://developers.hover.to/reference/create-pdf-or-csv.md
+  - https://developers.hover.to/reference/delete-capture-request.md
+  - https://developers.hover.to/reference/delete-job-share-link.md
+  - https://developers.hover.to/reference/delete-note.md
+  - https://developers.hover.to/reference/delete-pending-change-order-request.md
+  - https://developers.hover.to/reference/delete-webhook.md
+  - https://developers.hover.to/reference/generate-access-token.md
+  - https://developers.hover.to/reference/get-agreement-details-1.md
+  - https://developers.hover.to/reference/get-authorization-code.md
+  - https://developers.hover.to/reference/get-capture-request-link.md
+  - https://developers.hover.to/reference/get-esx-export.md
+  - https://developers.hover.to/reference/get-fml-export.md
+  - https://developers.hover.to/reference/get-inspection-pdf-1.md
+  - https://developers.hover.to/reference/get-inspection-workflow-details.md
+  - https://developers.hover.to/reference/get-jobs-payment-details.md
+  - https://developers.hover.to/reference/get-json-measurements.md
+  - https://developers.hover.to/reference/get-measurements-pdf.md
+  - https://developers.hover.to/reference/get-payment-receipt-html.md
+  - https://developers.hover.to/reference/get-payment-receipt-pdf.md
+  - https://developers.hover.to/reference/get-pdf-or-csv.md
+  - https://developers.hover.to/reference/get-skp-export.md
+  - https://developers.hover.to/reference/get-upgrade-price.md
+  - https://developers.hover.to/reference/get-wireframe-images-1.md
+  - https://developers.hover.to/reference/get-xlsx-measurements.md
+  - https://developers.hover.to/reference/get-xml-3d-export.md
+  - https://developers.hover.to/reference/invite-user.md
+  - https://developers.hover.to/reference/list-available-deliverables.md
+  - https://developers.hover.to/reference/list-capture-requests.md
+  - https://developers.hover.to/reference/list-deliverable-change-requests.md
+  - https://developers.hover.to/reference/list-estimates.md
+  - https://developers.hover.to/reference/list-instant-design-images.md
+  - https://developers.hover.to/reference/list-instant-design-leads.md
+  - https://developers.hover.to/reference/list-job-share-links.md
+  - https://developers.hover.to/reference/list-jobs.md
+  - https://developers.hover.to/reference/list-notes.md
+  - https://developers.hover.to/reference/list-organization-tree.md
+  - https://developers.hover.to/reference/list-payments.md
+  - https://developers.hover.to/reference/list-users.md
+  - https://developers.hover.to/reference/list-wallets.md
+  - https://developers.hover.to/reference/list-webhooks.md
+  - https://developers.hover.to/reference/multi-structure-test-jobs.md
+  - https://developers.hover.to/reference/re-assign-requesting-user.md
+  - https://developers.hover.to/reference/refresh-access-token.md
+  - https://developers.hover.to/reference/register-webhook.md
+  - https://developers.hover.to/reference/remove-user-from-org.md
+  - https://developers.hover.to/reference/resend-capture-request-notifications.md
+  - https://developers.hover.to/reference/resend-webhook-verification-code.md
+  - https://developers.hover.to/reference/send-invitation-email.md
+  - https://developers.hover.to/reference/share-inspection-workflow.md
+  - https://developers.hover.to/reference/show-capture-request-details.md
+  - https://developers.hover.to/reference/show-estimate-details.md
+  - https://developers.hover.to/reference/show-instant-design-image.md
+  - https://developers.hover.to/reference/show-instant-design-lead.md
+  - https://developers.hover.to/reference/show-job-details.md
+  - https://developers.hover.to/reference/show-job-share-link.md
+  - https://developers.hover.to/reference/show-organization-details.md
+  - https://developers.hover.to/reference/show-user-profile.md
+  - https://developers.hover.to/reference/update-a-job.md
+  - https://developers.hover.to/reference/update-job-share-link.md
+  - https://developers.hover.to/reference/update-job-test-state-single-structure.md
+  - https://developers.hover.to/reference/update-note.md
+  - https://developers.hover.to/reference/update-organization.md
+  - https://developers.hover.to/reference/verify-webhook.md
+  merge:
+    pages: 70
+    deduped: 69
+    conflicts_kept_first: 0

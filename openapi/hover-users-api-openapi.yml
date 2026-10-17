@@ -1,0 +1,174 @@
+openapi: 3.2.0
+info:
+  title: hover-api-v3 Users API
+  version: '3'
+servers:
+- url: https://hover.to
+security:
+- sec0: []
+tags:
+- name: Users
+paths:
+  /api/v2/users:
+    get:
+      summary: List Users
+      description: ''
+      operationId: list-users
+      parameters:
+      - name: search
+        in: query
+        description: String. Filter users by search text. You can search by user name or email.
+        schema:
+          type: string
+          default: homeowner@gmail.com
+      - name: admin
+        in: query
+        description: Defaults to neither option. If you pass true admins will be returned. If you pass false no admins will be returned. Leaving blank returns all users
+        schema:
+          type: boolean
+          default: false
+      - name: org_id
+        in: query
+        description: All users that your ACL has access to will be returned. If you specify an `org_id`, only users in that org will be returned
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+      - name: state
+        in: query
+        description: String or Array. If you pass `invited`, users that have been invited, but not activated will be returned. If you pass `activated` users that are activated(members) will be returned. You can also pass an array of states an users matching any of those states will be returned.
+        schema:
+          type: string
+          default: invited
+      - name: jobs_need_approval
+        in: query
+        description: Boolean. If you pass `true', users that require job approval will be returned. If you pass `false` users that do not require job approval will be returned.
+        schema:
+          type: boolean
+          default: false
+      - name: sort_order
+        in: query
+        description: Default sort is based on the `updated_at` column. Availble values are `ASC` and `DESC`, which will cause user objects to be sorted by their first name ascending or descending.
+        schema:
+          type: string
+          default: ASC
+      - name: page
+        in: query
+        description: Integer. Defaults to 1 and returns a specific page of results
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: per_page
+        in: query
+        description: Integer. Defaults to 25 and and returns the desired number of user objects on a given page.
+        schema:
+          type: integer
+          format: int32
+          default: 25
+      deprecated: false
+      tags:
+      - Users
+  /api/v2/users/profile:
+    get:
+      summary: Show User Profile
+      description: ''
+      operationId: show-user-profile
+      parameters:
+      - name: current_user_id
+        in: query
+        description: Required. The ID of the user whose profile will be returned
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+      deprecated: false
+      tags:
+      - Users
+components:
+  securitySchemes:
+    sec0:
+      type: oauth2
+      flows: {}
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://developers.hover.to/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://developers.hover.to/reference/blueprint-upload-build-all.md
+  - https://developers.hover.to/reference/blueprint-upload-specify-details.md
+  - https://developers.hover.to/reference/check-for-existing-capture-request.md
+  - https://developers.hover.to/reference/create-capture-request.md
+  - https://developers.hover.to/reference/create-deliverable-change-request.md
+  - https://developers.hover.to/reference/create-job-share-link-with-password.md
+  - https://developers.hover.to/reference/create-note.md
+  - https://developers.hover.to/reference/create-pdf-or-csv.md
+  - https://developers.hover.to/reference/delete-capture-request.md
+  - https://developers.hover.to/reference/delete-job-share-link.md
+  - https://developers.hover.to/reference/delete-note.md
+  - https://developers.hover.to/reference/delete-pending-change-order-request.md
+  - https://developers.hover.to/reference/delete-webhook.md
+  - https://developers.hover.to/reference/generate-access-token.md
+  - https://developers.hover.to/reference/get-agreement-details-1.md
+  - https://developers.hover.to/reference/get-authorization-code.md
+  - https://developers.hover.to/reference/get-capture-request-link.md
+  - https://developers.hover.to/reference/get-esx-export.md
+  - https://developers.hover.to/reference/get-fml-export.md
+  - https://developers.hover.to/reference/get-inspection-pdf-1.md
+  - https://developers.hover.to/reference/get-inspection-workflow-details.md
+  - https://developers.hover.to/reference/get-jobs-payment-details.md
+  - https://developers.hover.to/reference/get-json-measurements.md
+  - https://developers.hover.to/reference/get-measurements-pdf.md
+  - https://developers.hover.to/reference/get-payment-receipt-html.md
+  - https://developers.hover.to/reference/get-payment-receipt-pdf.md
+  - https://developers.hover.to/reference/get-pdf-or-csv.md
+  - https://developers.hover.to/reference/get-skp-export.md
+  - https://developers.hover.to/reference/get-upgrade-price.md
+  - https://developers.hover.to/reference/get-wireframe-images-1.md
+  - https://developers.hover.to/reference/get-xlsx-measurements.md
+  - https://developers.hover.to/reference/get-xml-3d-export.md
+  - https://developers.hover.to/reference/invite-user.md
+  - https://developers.hover.to/reference/list-available-deliverables.md
+  - https://developers.hover.to/reference/list-capture-requests.md
+  - https://developers.hover.to/reference/list-deliverable-change-requests.md
+  - https://developers.hover.to/reference/list-estimates.md
+  - https://developers.hover.to/reference/list-instant-design-images.md
+  - https://developers.hover.to/reference/list-instant-design-leads.md
+  - https://developers.hover.to/reference/list-job-share-links.md
+  - https://developers.hover.to/reference/list-jobs.md
+  - https://developers.hover.to/reference/list-notes.md
+  - https://developers.hover.to/reference/list-organization-tree.md
+  - https://developers.hover.to/reference/list-payments.md
+  - https://developers.hover.to/reference/list-users.md
+  - https://developers.hover.to/reference/list-wallets.md
+  - https://developers.hover.to/reference/list-webhooks.md
+  - https://developers.hover.to/reference/multi-structure-test-jobs.md
+  - https://developers.hover.to/reference/re-assign-requesting-user.md
+  - https://developers.hover.to/reference/refresh-access-token.md
+  - https://developers.hover.to/reference/register-webhook.md
+  - https://developers.hover.to/reference/remove-user-from-org.md
+  - https://developers.hover.to/reference/resend-capture-request-notifications.md
+  - https://developers.hover.to/reference/resend-webhook-verification-code.md
+  - https://developers.hover.to/reference/send-invitation-email.md
+  - https://developers.hover.to/reference/share-inspection-workflow.md
+  - https://developers.hover.to/reference/show-capture-request-details.md
+  - https://developers.hover.to/reference/show-estimate-details.md
+  - https://developers.hover.to/reference/show-instant-design-image.md
+  - https://developers.hover.to/reference/show-instant-design-lead.md
+  - https://developers.hover.to/reference/show-job-details.md
+  - https://developers.hover.to/reference/show-job-share-link.md
+  - https://developers.hover.to/reference/show-organization-details.md
+  - https://developers.hover.to/reference/show-user-profile.md
+  - https://developers.hover.to/reference/update-a-job.md
+  - https://developers.hover.to/reference/update-job-share-link.md
+  - https://developers.hover.to/reference/update-job-test-state-single-structure.md
+  - https://developers.hover.to/reference/update-note.md
+  - https://developers.hover.to/reference/update-organization.md
+  - https://developers.hover.to/reference/verify-webhook.md
+  merge:
+    pages: 70
+    deduped: 69
+    conflicts_kept_first: 0

@@ -145,8 +145,10 @@ common:
 
 apis:
 - name: HOVER API
-  description: REST API for creating and managing property capture jobs, retrieving 3D models and measurement deliverables, inspections, estimates,
-    instant-design leads, and webhooks. OAuth 2.0 authenticated. Versioned under /api/v1, /api/v2, and /api/v3 paths.
+  description: >-
+    REST API for creating and managing property capture jobs, retrieving 3D models and measurement deliverables,
+    inspections, estimates, instant-design leads, and webhooks. OAuth 2.0 authenticated. Versioned under
+    /api/v1, /api/v2, and /api/v3 paths.
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
@@ -171,37 +173,226 @@ apis:
   - type: Conformance
     url: conformance/hover-conformance.yml
   aid: hover:hover-api
-- aid: hover:hover-api-v3
-  name: HOVER Api V3 Openapi.Yml API
-  description: The Api V3 Openapi.Yml API from HOVER — 64 operation(s) for api v3 openapi.yml.
+- aid: hover:hover-agreements-api
+  name: HOVER Agreements API
+  description: The Agreements API from HOVER — 1 operation(s) for agreements.
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
-  - Api V3 Openapi.Yml
+  - Agreements
   properties:
   - type: OpenAPI
-    url: openapi/hover-api-v3-openapi.yml
-- aid: hover:hover-ehi
-  name: HOVER Ehi Openapi.Yml API
-  description: The Ehi Openapi.Yml API from HOVER — 1 operation(s) for ehi openapi.yml.
+    url: openapi/hover-agreements-api-openapi.yml
+- aid: hover:hover-blueprints-api
+  name: HOVER Blueprints API
+  description: The Blueprints API from HOVER — 1 operation(s) for blueprints.
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
-  - Ehi Openapi.Yml
+  - Blueprints
   properties:
   - type: OpenAPI
-    url: openapi/hover-ehi-openapi.yml
-- aid: hover:hover-rest-api
+    url: openapi/hover-blueprints-api-openapi.yml
+- aid: hover:hover-blueprints-copy-api
+  name: HOVER Blueprints (COPY) API
+  description: The Blueprints (COPY) API from HOVER — 1 operation(s) for blueprints (copy).
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Blueprints (COPY)
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-blueprints-copy-api-openapi.yml
+- aid: hover:hover-capture-requests-api
+  name: HOVER Capture Requests API
+  description: The Capture Requests API from HOVER — 6 operation(s) for capture requests.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Capture Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-capture-requests-api-openapi.yml
+- aid: hover:hover-deliverables-api
+  name: HOVER Deliverables API
+  description: The Deliverables API from HOVER — 1 operation(s) for deliverables.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Deliverables
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-deliverables-api-openapi.yml
+- aid: hover:hover-estimates-api
+  name: HOVER Estimates API
+  description: The Estimates API from HOVER — 3 operation(s) for estimates.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Estimates
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-estimates-api-openapi.yml
+- aid: hover:hover-https-api
+  name: 'HOVER Https: API'
+  description: 'The Https: API from HOVER — 2 operation(s) for https:.'
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - 'Https:'
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-https-api-openapi.yml
+- aid: hover:hover-inspection-workflows-api
+  name: HOVER Inspection Workflows API
+  description: The Inspection Workflows API from HOVER — 2 operation(s) for inspection workflows.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Inspection Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-inspection-workflows-api-openapi.yml
+- aid: hover:hover-inspections-api
+  name: HOVER Inspections API
+  description: The Inspections API from HOVER — 4 operation(s) for inspections.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Inspections
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-inspections-api-openapi.yml
+- aid: hover:hover-instant-design-api
+  name: HOVER Instant Design API
+  description: The Instant Design API from HOVER — 4 operation(s) for instant design.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Instant Design
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-instant-design-api-openapi.yml
+- aid: hover:hover-job-shares-api
+  name: HOVER Job Shares API
+  description: The Job Shares API from HOVER — 2 operation(s) for job shares.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Job Shares
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-job-shares-api-openapi.yml
+- aid: hover:hover-jobs-api
   name: HOVER Jobs API
-  description: The Jobs API from HOVER — 5 operation(s) for jobs.
+  description: The Jobs API from HOVER — 10 operation(s) for jobs.
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
   - Jobs
   properties:
   - type: OpenAPI
-    url: openapi/hover-rest-api-openapi.yml
-
+    url: openapi/hover-jobs-api-openapi.yml
+- aid: hover:hover-models-api
+  name: HOVER Models API
+  description: The Models API from HOVER — 10 operation(s) for models.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-models-api-openapi.yml
+- aid: hover:hover-notes-api
+  name: HOVER Notes API
+  description: The Notes API from HOVER — 1 operation(s) for notes.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-notes-api-openapi.yml
+- aid: hover:hover-notes-json-api
+  name: HOVER Notes.json API
+  description: The Notes.json API from HOVER — 1 operation(s) for notes.json.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Notes.json
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-notes-json-api-openapi.yml
+- aid: hover:hover-oauth-api
+  name: HOVER OAuth API
+  description: The Oauth API from HOVER — 3 operation(s) for oauth.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-oauth-api-openapi.yml
+- aid: hover:hover-orgs-api
+  name: HOVER Orgs API
+  description: The Orgs API from HOVER — 6 operation(s) for orgs.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Orgs
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-orgs-api-openapi.yml
+- aid: hover:hover-payments-api
+  name: HOVER Payments API
+  description: The Payments API from HOVER — 4 operation(s) for payments.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-payments-api-openapi.yml
+- aid: hover:hover-users-api
+  name: HOVER Users API
+  description: The Users API from HOVER — 2 operation(s) for users.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-users-api-openapi.yml
+- aid: hover:hover-wallets-api
+  name: HOVER Wallets API
+  description: The Wallets API from HOVER — 1 operation(s) for wallets.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Wallets
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-wallets-api-openapi.yml
+- aid: hover:hover-waste-factor-api
+  name: HOVER Waste Factor API
+  description: The Waste Factor API from HOVER — 1 operation(s) for waste factor.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Waste Factor
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-waste-factor-api-openapi.yml
+- aid: hover:hover-webhooks-api
+  name: HOVER Webhooks API
+  description: The Webhooks API from HOVER — 4 operation(s) for webhooks.
+  humanURL: https://developers.hover.to/docs/welcome
+  baseURL: https://hover.to/api
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/hover-webhooks-api-openapi.yml
 x-enrichment:
   date: '2026-07-19'
   status: backfilled

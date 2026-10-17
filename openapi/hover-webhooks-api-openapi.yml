@@ -1,0 +1,277 @@
+openapi: 3.2.0
+info:
+  title: hover-api-v3 Webhooks API
+  version: '3'
+servers:
+- url: https://hover.to
+security:
+- sec0: []
+tags:
+- name: Webhooks
+paths:
+  /api/v2/webhooks:
+    get:
+      summary: List Webhooks
+      description: ''
+      operationId: list-webhooks
+      parameters:
+      - name: page
+        in: query
+        description: To paginate the API response if more than one page is returned
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      deprecated: false
+      tags:
+      - Webhooks
+    post:
+      summary: Register Webhook
+      description: This endpoint registers a webhook to be used within an integration. Registering a webhook must happen before verifying a webhook.
+      operationId: register-webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhook:
+                  properties:
+                    url:
+                      type: string
+                      description: The URL where Hover will POST webhook events.
+                      default: https://webhook-receiver.com
+                    content_type:
+                      type: string
+                      description: Optional and defaults to `x-www-form-urlencoded`. When it's given a valid value, webhook will include specified content type in POST header. Currently supports `x-www-form-urlencoded` and `json`
+                      default: json
+                  required: []
+                  type: object
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                webhook:
+                  properties:
+                    url:
+                      type: string
+                      description: The URL where Hover will POST webhook events.
+                      default: https://webhook-receiver.com
+                    content_type:
+                      type: string
+                      description: Optional and defaults to `x-www-form-urlencoded`. When it's given a valid value, webhook will include specified content type in POST header. Currently supports `x-www-form-urlencoded` and `json`
+                      default: json
+                  required: []
+                  type: object
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  owner_type:
+                    type: string
+                  owner_id:
+                    type: string
+                  url:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  verified_at:
+                    type: string
+                  hmac_secret:
+                    type: string
+                  last_error:
+                    type: string
+                  content_type:
+                    type: string
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '422':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Unprocessable Entity:
+                  summary: Unprocessable Entity
+                  value: '{}'
+          description: Unprocessable Entity
+      tags:
+      - Webhooks
+  /api/v2/webhooks/{webhook_id}:
+    delete:
+      summary: Delete Webhook
+      description: ''
+      operationId: delete-webhook
+      parameters:
+      - name: webhook_id
+        in: path
+        description: The ID of the webhook you wish to delete.
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+        required: true
+      deprecated: false
+      tags:
+      - Webhooks
+  /api/v2/webhooks/{webhook_id}/request_verification:
+    post:
+      summary: Resend Webhook Verification Code
+      description: ''
+      operationId: resend-webhook-verification-code
+      parameters:
+      - name: webhook_id
+        in: path
+        description: The ID of the webhook you want to verify.
+        schema:
+          type: integer
+          format: int32
+          default: 8675309
+        required: true
+      deprecated: false
+      tags:
+      - Webhooks
+  /api/v2/webhooks/{webhook_verification_code}/verify:
+    put:
+      summary: Verify Webhook
+      description: ''
+      operationId: verify-webhook
+      parameters:
+      - name: webhook_verification_code
+        in: path
+        description: The webhook verification code received by your registered webhook URL.
+        schema:
+          type: string
+          default: addd2b9-5cd7-497f-9f32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Webhooks
+components:
+  securitySchemes:
+    sec0:
+      type: oauth2
+      flows: {}
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://developers.hover.to/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://developers.hover.to/reference/blueprint-upload-build-all.md
+  - https://developers.hover.to/reference/blueprint-upload-specify-details.md
+  - https://developers.hover.to/reference/check-for-existing-capture-request.md
+  - https://developers.hover.to/reference/create-capture-request.md
+  - https://developers.hover.to/reference/create-deliverable-change-request.md
+  - https://developers.hover.to/reference/create-job-share-link-with-password.md
+  - https://developers.hover.to/reference/create-note.md
+  - https://developers.hover.to/reference/create-pdf-or-csv.md
+  - https://developers.hover.to/reference/delete-capture-request.md
+  - https://developers.hover.to/reference/delete-job-share-link.md
+  - https://developers.hover.to/reference/delete-note.md
+  - https://developers.hover.to/reference/delete-pending-change-order-request.md
+  - https://developers.hover.to/reference/delete-webhook.md
+  - https://developers.hover.to/reference/generate-access-token.md
+  - https://developers.hover.to/reference/get-agreement-details-1.md
+  - https://developers.hover.to/reference/get-authorization-code.md
+  - https://developers.hover.to/reference/get-capture-request-link.md
+  - https://developers.hover.to/reference/get-esx-export.md
+  - https://developers.hover.to/reference/get-fml-export.md
+  - https://developers.hover.to/reference/get-inspection-pdf-1.md
+  - https://developers.hover.to/reference/get-inspection-workflow-details.md
+  - https://developers.hover.to/reference/get-jobs-payment-details.md
+  - https://developers.hover.to/reference/get-json-measurements.md
+  - https://developers.hover.to/reference/get-measurements-pdf.md
+  - https://developers.hover.to/reference/get-payment-receipt-html.md
+  - https://developers.hover.to/reference/get-payment-receipt-pdf.md
+  - https://developers.hover.to/reference/get-pdf-or-csv.md
+  - https://developers.hover.to/reference/get-skp-export.md
+  - https://developers.hover.to/reference/get-upgrade-price.md
+  - https://developers.hover.to/reference/get-wireframe-images-1.md
+  - https://developers.hover.to/reference/get-xlsx-measurements.md
+  - https://developers.hover.to/reference/get-xml-3d-export.md
+  - https://developers.hover.to/reference/invite-user.md
+  - https://developers.hover.to/reference/list-available-deliverables.md
+  - https://developers.hover.to/reference/list-capture-requests.md
+  - https://developers.hover.to/reference/list-deliverable-change-requests.md
+  - https://developers.hover.to/reference/list-estimates.md
+  - https://developers.hover.to/reference/list-instant-design-images.md
+  - https://developers.hover.to/reference/list-instant-design-leads.md
+  - https://developers.hover.to/reference/list-job-share-links.md
+  - https://developers.hover.to/reference/list-jobs.md
+  - https://developers.hover.to/reference/list-notes.md
+  - https://developers.hover.to/reference/list-organization-tree.md
+  - https://developers.hover.to/reference/list-payments.md
+  - https://developers.hover.to/reference/list-users.md
+  - https://developers.hover.to/reference/list-wallets.md
+  - https://developers.hover.to/reference/list-webhooks.md
+  - https://developers.hover.to/reference/multi-structure-test-jobs.md
+  - https://developers.hover.to/reference/re-assign-requesting-user.md
+  - https://developers.hover.to/reference/refresh-access-token.md
+  - https://developers.hover.to/reference/register-webhook.md
+  - https://developers.hover.to/reference/remove-user-from-org.md
+  - https://developers.hover.to/reference/resend-capture-request-notifications.md
+  - https://developers.hover.to/reference/resend-webhook-verification-code.md
+  - https://developers.hover.to/reference/send-invitation-email.md
+  - https://developers.hover.to/reference/share-inspection-workflow.md
+  - https://developers.hover.to/reference/show-capture-request-details.md
+  - https://developers.hover.to/reference/show-estimate-details.md
+  - https://developers.hover.to/reference/show-instant-design-image.md
+  - https://developers.hover.to/reference/show-instant-design-lead.md
+  - https://developers.hover.to/reference/show-job-details.md
+  - https://developers.hover.to/reference/show-job-share-link.md
+  - https://developers.hover.to/reference/show-organization-details.md
+  - https://developers.hover.to/reference/show-user-profile.md
+  - https://developers.hover.to/reference/update-a-job.md
+  - https://developers.hover.to/reference/update-job-share-link.md
+  - https://developers.hover.to/reference/update-job-test-state-single-structure.md
+  - https://developers.hover.to/reference/update-note.md
+  - https://developers.hover.to/reference/update-organization.md
+  - https://developers.hover.to/reference/verify-webhook.md
+  merge:
+    pages: 70
+    deduped: 69
+    conflicts_kept_first: 0
