@@ -239,6 +239,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - HTTP
+  tags_raw:
   - 'Https:'
   properties:
   - type: OpenAPI
@@ -259,6 +261,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - Inspection
+  tags_raw:
   - Inspections
   properties:
   - type: OpenAPI
@@ -289,6 +293,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -329,6 +335,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
@@ -339,6 +347,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - Organization
+  tags_raw:
   - Orgs
   properties:
   - type: OpenAPI
@@ -359,6 +369,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -389,6 +401,8 @@ apis:
   humanURL: https://developers.hover.to/docs/welcome
   baseURL: https://hover.to/api
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
