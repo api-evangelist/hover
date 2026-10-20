@@ -32,18 +32,56 @@
   relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
-- slug: hover-twilio
-  label: Twilio
-  partner: twilio
-  partner_name: Twilio
-  category: Phone & SMS
+- slug: hover-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
   type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/hover/integrations/twilio
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/hover_to/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: hover-servicetitan-own
+  label: ServiceTitan (own)
+  partner: servicetitan
+  partner_name: ServiceTitan (own)
+  category: Measurements & Estimations, On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hover
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: hover-zapier
+  label: Zapier
+  partner: zapier
+  partner_name: Zapier
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  evidence: https://zapier.com/apps/hover/integrations
   source: edge
   relationship: ipaas-bridge
-  status: pending-generation
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Hover
+    matched_domain: hover.to
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: hover
+    beta: false
+    builder: unknown (not in the directory record)
+  status: not-a-workflow
   arazzo: null
 - slug: hover-jobber
   label: Jobber
@@ -54,6 +92,19 @@
   marketplace: zapier
   channel: ipaas-usage
   evidence: https://zapier.com/apps/hover/integrations/jobber
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: hover-twilio
+  label: Twilio
+  partner: twilio
+  partner_name: Twilio
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/hover/integrations/twilio
   source: edge
   relationship: ipaas-bridge
   status: pending-generation
@@ -275,7 +326,7 @@
   arazzo: null
 - slug: hover-google-forms-legacy
   label: Google Forms (Legacy)
-  partner: google
+  partner: google-forms
   partner_name: Google Forms (Legacy)
   category: Forms & Surveys
   type: marketplace
@@ -285,55 +336,4 @@
   source: edge
   relationship: ipaas-bridge
   status: pending-generation
-  arazzo: null
-- slug: hover-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/hover_to/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: hover-servicetitan-own
-  label: ServiceTitan (own)
-  partner: servicetitan
-  partner_name: ServiceTitan (own)
-  category: Measurements & Estimations, On-The-Job
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/hover
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: hover-zapier
-  label: Zapier
-  partner: zapier
-  partner_name: Zapier
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  evidence: https://zapier.com/apps/hover/integrations
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Hover
-    matched_domain: hover.to
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: hover
-    beta: false
-    builder: unknown (not in the directory record)
-  status: not-a-workflow
   arazzo: null

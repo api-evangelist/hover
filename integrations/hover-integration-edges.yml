@@ -1,4 +1,4 @@
-generated: '2026-10-14'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/hover/integrations
@@ -76,6 +76,69 @@ marketplace_apps:
   - key: search_jobs
     label: Search for a Job or Model
 edges:
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/hover_to/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - HOVER Inc.
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - SAML
+- partner_name: ServiceTitan (own)
+  partner: servicetitan
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/hover
+  mirror_of: servicetitan/integrations/servicetitan-integration-edges.yml
+  apps:
+  - Hover
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Measurements & Estimations, On-The-Job
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/hover/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Hover
+    matched_domain: hover.to
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: hover
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 - partner_name: JobNimbus
   partner: jobnimbus
   partner_match: domain
@@ -100,18 +163,6 @@ edges:
   direction: third-party
   category: CRM (Customer Relationship Management)
   partner_url: https://acculynx.com/
-- partner_name: Twilio
-  partner: twilio
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  relationship: ipaas-bridge
-  evidence: https://zapier.com/apps/hover/integrations/twilio
-  direction: third-party
-  category: Phone & SMS
-  partner_url: https://www.twilio.com/
 - partner_name: Jobber
   partner: jobber
   partner_match: domain
@@ -124,6 +175,18 @@ edges:
   direction: third-party
   category: Scheduling & Booking
   partner_url: https://www.getjobber.com/plp/zapier?utm_source=Zapier&utm_medium=PLP
+- partner_name: Twilio
+  partner: twilio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/hover/integrations/twilio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.twilio.com/
 - partner_name: Gmail
   partner: gmail
   partner_match: domain+name-among-holders
@@ -329,7 +392,7 @@ edges:
   category: Forms & Surveys
   partner_url: https://zapier.com/magpi.com/
 - partner_name: Google Forms (Legacy)
-  partner: google
+  partner: google-forms
   partner_match: domain+name-among-holders
   partner_candidate: null
   type: marketplace
@@ -340,69 +403,6 @@ edges:
   direction: third-party
   category: Forms & Surveys
   partner_url: http://google.com/
-- partner_name: Okta (own)
-  partner: okta
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://www.okta.com/integrations/hover_to/
-  mirror_of: okta/integrations/okta-integration-edges.yml
-  apps:
-  - HOVER Inc.
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Single Sign-On
-  badges:
-  - OKTA_VERIFIED
-  features:
-  - SAML
-- partner_name: ServiceTitan (own)
-  partner: servicetitan
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.servicetitan.com/partner/hover
-  mirror_of: servicetitan/integrations/servicetitan-integration-edges.yml
-  apps:
-  - Hover
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Measurements & Estimations, On-The-Job
-- partner_name: Zapier
-  partner: zapier
-  partner_match: aggregator
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  relationship: ipaas-bridge
-  direction: third-party
-  evidence: https://zapier.com/apps/hover/integrations
-  category: null
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Hover
-    matched_domain: hover.to
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: hover
-    beta: false
-    builder: unknown (not in the directory record)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
 templates:
 - title: Send HOVER capture requests for new leads in AccuLynx
   url: https://zapier.com/apps/acculynx/integrations/hover/742686/send-hover-capture-requests-for-new-leads-in-acculynx
